@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="dropGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer Shield Silhouette -->
+  <path d="M32 4 L8 15 C8 32 18 48 32 60 C46 48 56 32 56 15 Z" fill="url(#shieldGrad)" stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Structural Steel Cross -->
+  <path d="M32 10 L32 54" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+  <path d="M14 26 L50 26" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+  <!-- Central Water Droplet / Moisture Shield -->
+  <path d="M32 18 C32 18 22 29 22 36 C22 41.5 26.5 46 32 46 C37.5 46 42 41.5 42 36 C42 29 32 18 32 18 Z" fill="url(#dropGrad)" stroke="#0c2340" stroke-width="1.5"/>
+  <!-- Highlight shine -->
+  <circle cx="28" cy="33" r="2.5" fill="#ffffff" opacity="0.75"/>
+</svg>

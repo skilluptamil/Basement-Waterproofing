@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Account | TitanShield</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/rtl.css">
+</head>
+<body>
+
+  <!-- Top Utilities Bar -->
+  <div style="padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); background: var(--bg-surface);">
+    <a href="index.html" class="nav-brand" aria-label="TitanShield Homepage">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V8.26l7-3.89v8.62z"/></svg>
+      </div>
+      <div class="brand-text-group">
+        <span class="brand-title">TITAN<span>SHIELD</span></span>
+        <span class="brand-tagline">Foundation & Waterproofing</span>
+      </div>
+    </a>
+
+    <div style="display: flex; gap: 0.5rem; align-items: center;">
+      <button type="button" class="btn-toggle-dir" id="rtlToggle" title="Toggle Layout Direction">RTL</button>
+      <button type="button" class="btn-toggle-theme" id="themeToggle" title="Toggle Light / Dark Mode">
+        <svg class="theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="index.html" class="btn btn-outline btn-sm">← Back to Home</a>
+    </div>
+  </div>
+
+  <main class="auth-wrapper">
+    <div class="auth-card" style="max-width: 520px;">
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <span class="badge badge-accent">Homeowner Registration</span>
+        <h1 style="font-size: 1.85rem; font-weight: 800; margin-bottom: 0.5rem;">Create Your Account</h1>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">Register your property to access digital warranty certificates & telemetry.</p>
+      </div>
+
+      <form class="needs-validation" id="registerForm" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="regName">Full Name *</label>
+          <input type="text" class="form-control" id="regName" required placeholder="e.g. Thomas Becker">
+          <span class="form-feedback">Full name is required.</span>
+        </div>
+
+        <div class="grid grid-2" style="gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label" for="regEmail">Email Address *</label>
+            <input type="email" class="form-control" id="regEmail" required placeholder="name@example.com">
+            <span class="form-feedback">Valid email required.</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="regPhone">Phone Number *</label>
+            <input type="tel" class="form-control" id="regPhone" required placeholder="(555) 000-0000">
+            <span class="form-feedback">Valid phone required.</span>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label" for="regPass">Password *</label>
+            <input type="password" class="form-control" id="regPass" required placeholder="Minimum 8 characters">
+            <span class="form-feedback">Password is required.</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="regPassConf">Confirm Password *</label>
+            <input type="password" class="form-control" id="regPassConf" required placeholder="Re-type password">
+            <span class="form-feedback">Confirm password is required.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="regProperty">Property Type</label>
+          <select class="form-control" id="regProperty">
+            <option value="single-family">Single Family Residence</option>
+            <option value="townhouse">Townhouse / Duplex</option>
+            <option value="commercial">Commercial / Institutional Building</option>
+          </select>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+          <label style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.85rem; cursor: pointer;">
+            <input type="checkbox" required id="regTerms" style="margin-top: 0.2rem;">
+            <span>I agree to the <a href="#">Terms of Service</a>, Privacy Policy, and digital warranty registration provisions.</span>
+          </label>
+          <span class="form-feedback" style="display: block;">You must agree to the terms.</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+          Complete Registration
+        </button>
+      </form>
+
+      <div style="text-align: center; margin-top: 1.5rem; font-size: 0.88rem; color: var(--text-muted);">
+        Already have an account? <a href="login.html" style="font-weight: 700;">Sign In</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    const form = document.getElementById('registerForm');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        window.location.href = 'dashboard.html';
+      });
+    }
+  </script>
+</body>
+</html>

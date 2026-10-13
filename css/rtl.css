@@ -1,0 +1,65 @@
+/* ==========================================================================
+   TITANSHIELD - RTL (RIGHT-TO-LEFT) SPECIFIC OVERRIDES
+   Ensures seamless bi-directional layout support for Arabic / Hebrew
+   ========================================================================== */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .dropdown-chevron,
+[dir="rtl"] .accordion-icon {
+  transform-origin: center;
+}
+
+[dir="rtl"] .card,
+[dir="rtl"] .form-group,
+[dir="rtl"] .section-header.text-start,
+[dir="rtl"] .defense-layer-item,
+[dir="rtl"] .pricing-card,
+[dir="rtl"] .comparison-table,
+[dir="rtl"] .dash-table {
+  text-align: right;
+}
+
+[dir="rtl"] .ba-handle {
+  /* In RTL, handle position logic is handled with start/end */
+}
+
+[dir="rtl"] .ba-badge.before {
+  left: 1rem;
+  right: auto;
+}
+
+[dir="rtl"] .ba-badge.after {
+  right: 1rem;
+  left: auto;
+}
+
+[dir="rtl"] .symptom-card::before {
+  right: 0;
+  left: auto;
+}
+
+[dir="rtl"] .hero-floating-badge {
+  right: -1.25rem;
+  left: auto;
+}
+
+@media (max-width: 1024px) {
+  [dir="rtl"] .hero-floating-badge {
+    right: 1rem;
+    left: auto;
+  }
+}
+
+[dir="rtl"] .sidebar-badge {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+/* Flip direction-dependent arrow icons */
+[dir="rtl"] .arrow-icon-flip {
+  transform: rotate(180deg);
+}

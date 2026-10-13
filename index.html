@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TitanShield | Basement Waterproofing & Foundation Repair Specialists</title>
+  <meta name="description" content="Certified structural engineers & waterproofing specialists. Lifetime transferable warranty on basement waterproofing, foundation crack repair, and stabilization.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/rtl.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       SHARED NAVBAR - EXACT REQUIRED STRUCTURE
+       1. Logo -> 2. Home (Dropdown: Home 1, Home 2) -> 3. About Us ->
+       4. Services -> 5. Pricing -> 6. Blog -> 7. Contact ->
+       8. LTR/RTL Toggle -> 9. Light/Dark Toggle -> 10. Primary CTA
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="nav-container">
+      <!-- 1. Company logo and brand name on the left -->
+      <a href="index.html" class="nav-brand" aria-label="TitanShield Homepage">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V8.26l7-3.89v8.62z"/></svg>
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-title">TITAN<span>SHIELD</span></span>
+          <span class="brand-tagline">Foundation & Waterproofing</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav & Mobile Menu Drawer -->
+      <div class="nav-menu-wrapper" id="navMenuWrapper">
+        <ul class="nav-links">
+          <!-- 2. Home dropdown containing Home 1 and Home 2 -->
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link active" id="homeDropdownTrigger" role="button" aria-expanded="false">
+              <span>Home</span>
+              <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="index.html" class="dropdown-link active">Home 1</a></li>
+              <li><a href="home-2.html" class="dropdown-link">Home 2</a></li>
+            </ul>
+          </li>
+
+          <!-- 3. About Us -->
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About Us</a>
+          </li>
+
+          <!-- 4. Services -->
+          <li class="nav-item">
+            <a href="services.html" class="nav-link">Services</a>
+          </li>
+
+          <!-- 5. Pricing -->
+          <li class="nav-item">
+            <a href="pricing.html" class="nav-link">Pricing</a>
+          </li>
+
+          <!-- 6. Blog -->
+          <li class="nav-item">
+            <a href="blog.html" class="nav-link">Blog</a>
+          </li>
+
+          <!-- 7. Contact -->
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Nav Controls -->
+        <div class="nav-actions">
+          <div class="nav-actions-toggles">
+            <!-- 8. LTR / RTL toggle button -->
+            <button type="button" class="btn-toggle-dir" id="rtlToggle" title="Toggle Layout Direction (LTR/RTL)">RTL</button>
+
+            <!-- 9. Light Mode / Dark Mode toggle button -->
+            <button type="button" class="btn-toggle-theme" id="themeToggle" title="Toggle Light / Dark Mode" aria-label="Toggle Theme">
+              <svg class="theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              <svg class="theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+          </div>
+
+          <!-- 10. One primary CTA button: Schedule an Inspection -->
+          <a href="#inspection-form" class="nav-cta-btn open-inspection-modal">
+            Schedule an Inspection
+          </a>
+        </div>
+      </div>
+
+      <!-- Hamburger Button (Mobile) -->
+      <button class="hamburger-btn" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         SECTION 1: HERO & PRIMARY CTA (Two-Column Desktop / Stacked Mobile)
+         ====================================================================== -->
+    <section class="hero-home1">
+      <div class="container">
+        <div class="hero-home1-grid">
+          <div>
+            <span class="badge badge-primary">Licensed Structural Engineers & Waterproofers</span>
+            <h1 class="hero-title">
+              Protect Your Home From <span class="highlight">Water Damage</span> & Foundation Settling
+            </h1>
+            <p class="hero-subtitle">
+              Engineered foundation stabilization, high-pressure crack sealing, and sub-floor drainage systems. Backed by an industry-leading 25-Year Transferable Lifetime Warranty.
+            </p>
+            <div class="btn-group">
+              <a href="#inspection-modal" class="btn btn-primary btn-lg open-inspection-modal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Schedule an Inspection
+              </a>
+              <a href="services.html" class="btn btn-outline btn-lg">
+                Explore Our Services
+              </a>
+            </div>
+            <div class="hero-trust-bar">
+              <div class="hero-trust-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span class="text">25-Yr Transferable Warranty</span>
+              </div>
+              <div class="hero-trust-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                <span class="text">Licensed PE Engineers</span>
+              </div>
+              <div class="hero-trust-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span class="text">4.9★ from 1,800+ Reviews</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-image-wrapper">
+            <div class="hero-image-card">
+              <img src="assets/images/home1-foundation-protection.jpg" alt="TitanShield residential foundation repair and structural waterproofing excavation" width="800" height="600">
+            </div>
+            <div class="hero-floating-badge">
+              <div class="badge-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div>
+                <div class="badge-num">12,500+</div>
+                <div class="badge-label">Homes Secured Since 1999</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 2: TRUST INDICATORS & COMPANY HIGHLIGHTS
+         ====================================================================== -->
+    <section class="trust-metrics-section">
+      <div class="container">
+        <div class="grid grid-4">
+          <div class="metric-card">
+            <div class="metric-number">25+</div>
+            <div class="metric-label">Years of Excellence</div>
+            <div class="metric-sub">Dedicated foundation engineering</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number">12.5k</div>
+            <div class="metric-label">Basements Restored</div>
+            <div class="metric-sub">Permanent moisture remediation</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number">100%</div>
+            <div class="metric-label">Transferable Warranty</div>
+            <div class="metric-sub">Guaranteed structural coverage</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number">4.9★</div>
+            <div class="metric-label">Client Satisfaction</div>
+            <div class="metric-sub">Verified BBB A+ accredited</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 3: MAIN SERVICES OVERVIEW
+         ====================================================================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-primary">Comprehensive Solutions</span>
+          <h2 class="section-title">Engineered Foundation & Waterproofing Services</h2>
+          <p class="section-subtitle">
+            From minor weeping cove joints to severe foundation settlement, our certified technicians deploy precision methods to protect your home.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <!-- Card 1 -->
+          <div class="card service-card card-hover">
+            <div class="card-image-wrap">
+              <img src="assets/images/service-foundation-crack-repair.jpg" alt="Foundation Crack Repair">
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Foundation Crack Repair</h3>
+              <p class="card-desc">High-pressure polyurethane injection and carbon-fiber stitching to rebond cracked basement walls.</p>
+              <ul class="service-features-list">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Stops active water leaks</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Carbon-fiber structural grid</li>
+              </ul>
+              <a href="service-details.html?service=foundation-crack-repair" class="btn btn-outline btn-sm">Learn More Details</a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card service-card card-hover">
+            <div class="card-image-wrap">
+              <img src="assets/images/service-basement-waterproofing.jpg" alt="Basement Waterproofing">
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Basement Waterproofing</h3>
+              <p class="card-desc">Sub-floor French drain systems, wall vapor barriers, and continuous hydrostatic pressure relief.</p>
+              <ul class="service-features-list">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 25-Year dry basement warranty</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Dual sump basin discharge</li>
+              </ul>
+              <a href="service-details.html?service=basement-waterproofing" class="btn btn-outline btn-sm">Learn More Details</a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card service-card card-hover">
+            <div class="card-image-wrap">
+              <img src="assets/images/service-foundation-stabilization.jpg" alt="Foundation Stabilization">
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Foundation Stabilization</h3>
+              <p class="card-desc">Hydraulic steel push piers and helical tiebacks to lift settling footings and arrest wall movement.</p>
+              <ul class="service-features-list">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Drives down to solid bedrock</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Closes drywall & brick cracks</li>
+              </ul>
+              <a href="service-details.html?service=foundation-stabilization" class="btn btn-outline btn-sm">Learn More Details</a>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card service-card card-hover">
+            <div class="card-image-wrap">
+              <img src="assets/images/service-sump-pump-installation.jpg" alt="Sump Pump Installation">
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Sump Pump Installation</h3>
+              <p class="card-desc">Commercial cast-iron pumps with deep-cycle battery backups and smart Wi-Fi water alarms.</p>
+              <ul class="service-features-list">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 4,200 GPH dual cast-iron power</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 48-Hour storm outage backup</li>
+              </ul>
+              <a href="service-details.html?service=sump-pump-installation" class="btn btn-outline btn-sm">Learn More Details</a>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="card service-card card-hover">
+            <div class="card-image-wrap">
+              <img src="assets/images/service-crawl-space.jpg" alt="Crawl Space Encapsulation">
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Crawl Space Encapsulation</h3>
+              <p class="card-desc">20-mil antimicrobial vapor barrier seal, dehumidification, and structural joist rot prevention.</p>
+              <ul class="service-features-list">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Lowers energy bills by up to 18%</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Eliminates wood decay fungi</li>
+              </ul>
+              <a href="service-details.html?service=crawl-space-encapsulation" class="btn btn-outline btn-sm">Learn More Details</a>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="card service-card card-hover">
+            <div class="card-image-wrap">
+              <img src="assets/images/service-drainage-systems.jpg" alt="Drainage Systems">
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Drainage System Installation</h3>
+              <p class="card-desc">Exterior yard French drains, buried downspout conductors, and surface swales to keep water away.</p>
+              <ul class="service-features-list">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Smooth-wall crushproof PVC</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 15-Year clog-free guarantee</li>
+              </ul>
+              <a href="service-details.html?service=drainage-system-installation" class="btn btn-outline btn-sm">Learn More Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="services.html" class="btn btn-primary btn-lg">View All 8 Structural Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 4: WHY CHOOSE US & STRUCTURAL BENEFITS
+         ====================================================================== -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="grid grid-2" style="align-items: center; gap: var(--space-3xl);">
+          <div>
+            <span class="badge badge-accent">Engineering Authority</span>
+            <h2 class="section-title">Why Homeowners Trust TitanShield</h2>
+            <p class="section-subtitle" style="margin-bottom: 2rem;">
+              We don't apply superficial cosmetic patches. Our licensed structural team investigates the root soil and hydrological forces affecting your home.
+            </p>
+
+            <div class="grid grid-2" style="gap: 1.5rem;">
+              <div class="card" style="padding: 1.5rem;">
+                <div class="card-icon" style="margin-bottom: 0.75rem;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+                </div>
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.35rem;">PE Stamped Plans</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Certified structural engineering calculations tailored to local soil chemistry.</p>
+              </div>
+
+              <div class="card" style="padding: 1.5rem;">
+                <div class="card-icon" style="margin-bottom: 0.75rem;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.35rem;">Lifetime Warranty</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Transferable coverage protecting your home's equity for subsequent owners.</p>
+              </div>
+
+              <div class="card" style="padding: 1.5rem;">
+                <div class="card-icon" style="margin-bottom: 0.75rem;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                </div>
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.35rem;">24-48 Hr Fast Turnaround</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Most residential basement and crack projects completed in under 2 days.</p>
+              </div>
+
+              <div class="card" style="padding: 1.5rem;">
+                <div class="card-icon" style="margin-bottom: 0.75rem;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                </div>
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.35rem;">Zero-Mess Guarantee</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Plastic sheeting dust barriers and HEPA air scrubbers protect your living areas.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-image-card">
+            <img src="assets/images/about-repair-team.jpg" alt="TitanShield engineering team on-site" width="800" height="600">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 5: 4-STEP REPAIR PROCESS & GUARANTEE
+         ====================================================================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-primary">Proven Protocol</span>
+          <h2 class="section-title">Our 4-Step Structural Repair Process</h2>
+          <p class="section-subtitle">A methodical, engineered procedure ensuring permanent stabilization and moisture-proofing.</p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-step-card">
+            <div class="step-number-tag">01</div>
+            <h3 class="step-title">27-Point Diagnostic</h3>
+            <p class="step-desc">Laser elevation scanning, wall deflection monitoring, and soil moisture profiling to pinpoint root failure.</p>
+          </div>
+
+          <div class="process-step-card">
+            <div class="step-number-tag">02</div>
+            <h3 class="step-title">Engineering Blueprint</h3>
+            <p class="step-desc">Custom blueprint calculating hydrostatic load, pier bracket placement, and water flow drainage capacity.</p>
+          </div>
+
+          <div class="process-step-card">
+            <div class="step-number-tag">03</div>
+            <h3 class="step-title">Precision Installation</h3>
+            <p class="step-desc">Clean, dust-contained execution using heavy-duty carbon fiber, steel push piers, and dual-port resin injection.</p>
+          </div>
+
+          <div class="process-step-card">
+            <div class="step-number-tag">04</div>
+            <h3 class="step-title">Final Seal & Warranty</h3>
+            <p class="step-desc">Rigorous water-flow validation, clean site sign-off, and issuance of your 25-Year Transferable Warranty deed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 6: BEFORE & AFTER PROJECT PREVIEW (Interactive Slider)
+         ====================================================================== -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-accent">Verified Results</span>
+          <h2 class="section-title">Before & After Project Showcase</h2>
+          <p class="section-subtitle">Drag the interactive slider handle below to see how our engineering turns failing foundations into rock-solid structures.</p>
+        </div>
+
+        <div style="max-width: 900px; margin-inline: auto;">
+          <div class="ba-slider-container">
+            <!-- Before Image (Base) -->
+            <img class="ba-slider-img" src="assets/images/gallery-water-damage-before.jpg" alt="Leaking cracked foundation wall before TitanShield restoration">
+            <span class="ba-badge before">Before Repair</span>
+
+            <!-- After Image (Overlay clipped) -->
+            <div class="ba-slider-after-wrap">
+              <img class="ba-slider-img" src="assets/images/service-foundation-crack-repair.jpg" alt="Epoxy injected carbon-fiber reinforced foundation after repair">
+              <span class="ba-badge after">After TitanShield</span>
+            </div>
+
+            <!-- Drag Handle -->
+            <div class="ba-handle">
+              <div class="ba-handle-button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/><polyline points="9 18 15 12 9 6"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 1.5rem;">
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;">
+              <strong>Project:</strong> High-Hydrostatic Wall Shear & Active Water Ingress • <strong>Duration:</strong> 1.5 Days • <strong>Warranty:</strong> Lifetime
+            </p>
+            <a href="gallery.html" class="btn btn-primary">Browse Full Before & After Gallery</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 7: CUSTOMER REVIEWS, FAQS, AND FINAL INSPECTION CTA
+         ====================================================================== -->
+    <section class="section">
+      <div class="container">
+        <!-- Testimonials Preview -->
+        <div class="section-header">
+          <span class="badge badge-primary">Verified Reviews</span>
+          <h2 class="section-title">What Homeowners Say</h2>
+        </div>
+
+        <div class="grid grid-3" style="margin-bottom: var(--space-4xl);">
+          <div class="card card-hover" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="color: var(--color-accent); margin-bottom: 0.75rem;">★★★★★</div>
+              <p class="card-desc">"During last spring's record floods, our basement took in 3 inches of water. TitanShield installed an interior drain tile and dual battery sump system. Not a single drop since. True lifesavers!"</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="assets/images/avatar-marcus-sterling.jpg" alt="Marcus Sterling" class="testimonial-avatar">
+              <div class="testimonial-author-meta">
+                <div class="testimonial-name">Marcus Sterling</div>
+                <div class="testimonial-role">Homeowner in Oakridge • Waterproofing System</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-hover" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="color: var(--color-accent); margin-bottom: 0.75rem;">★★★★★</div>
+              <p class="card-desc">"Our home was settling on the north corner, causing drywall cracks and jammed doors. The engineers pushed 7 steel piers down to bedrock and lifted the foundation 1.2 inches. Remarkable engineering."</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="assets/images/avatar-emily-chen.jpg" alt="Dr. Emily Chen" class="testimonial-avatar">
+              <div class="testimonial-author-meta">
+                <div class="testimonial-name">Dr. Emily Chen</div>
+                <div class="testimonial-role">Homeowner in Greenfield • Push Pier Stabilization</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-hover" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="color: var(--color-accent); margin-bottom: 0.75rem;">★★★★★</div>
+              <p class="card-desc">"Clean, professional, and on schedule. The carbon fiber straps on our bowing cinder block wall look incredibly neat and the peace of mind with the lifetime transferable warranty is priceless."</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="assets/images/avatar-david-sarah.jpg" alt="David & Sarah Vance" class="testimonial-avatar">
+              <div class="testimonial-author-meta">
+                <div class="testimonial-name">David & Sarah Vance</div>
+                <div class="testimonial-role">Homeowners in Highland Park • Wall Crack Stitching</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Home 1 FAQs Accordion -->
+        <div style="max-width: 860px; margin-inline: auto; margin-bottom: var(--space-4xl);">
+          <div class="section-header">
+            <span class="badge badge-primary">Questions & Answers</span>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+          </div>
+
+          <div class="accordion">
+            <div class="accordion-item active">
+              <button class="accordion-header">
+                <span>How much does a 27-Point Foundation Inspection cost?</span>
+                <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-content">
+                  Our comprehensive 27-point physical inspection is 100% free with no obligation for residential homeowners. It includes laser floor elevation scanning, wall deflection measurement, and an itemized repair estimate.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header">
+                <span>Can foundation crack repair be done from the inside?</span>
+                <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-content">
+                  Yes! Over 90% of foundation cracks and bowing walls are permanently repaired from inside the basement using high-pressure resin injection and carbon-fiber reinforcement, avoiding costly yard excavation.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header">
+                <span>Is your 25-Year Warranty transferable if I sell my property?</span>
+                <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-content">
+                  Yes, our warranty remains tied to the physical structure and automatically transfers to the next buyer without transfer fees, preserving your home's appraisal and resale value.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Final Inspection CTA Banner -->
+        <div class="card" style="background: linear-gradient(135deg, #0c2340 0%, #0369a1 100%); color: #ffffff; padding: 3.5rem 2.5rem; text-align: center; border: none; border-radius: var(--radius-xl); box-shadow: var(--shadow-xl);">
+          <span class="badge badge-accent" style="margin-bottom: 1rem;">No Obligation Diagnostic</span>
+          <h2 style="font-size: clamp(2rem, 3.5vw, 2.75rem); color: #ffffff; margin-bottom: 1rem;">Protect Your Foundation Before Water Strikes Again</h2>
+          <p style="color: #cbd5e1; max-width: 620px; margin-inline: auto; font-size: 1.1rem; margin-bottom: 2rem;">
+            Schedule your free in-home 27-point inspection with our certified structural specialists today.
+          </p>
+          <div class="btn-group" style="justify-content: center;">
+            <button class="btn btn-accent btn-lg open-inspection-modal">Schedule Free Inspection</button>
+            <a href="tel:18005557443" class="btn btn-secondary btn-lg" style="background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3);">
+              Call (800) 555-SHIELD
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       SHARED SITE FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Col 1: Brand & License -->
+          <div class="footer-brand">
+            <a href="index.html" class="nav-brand" aria-label="TitanShield Homepage">
+              <div class="brand-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V8.26l7-3.89v8.62z"/></svg>
+              </div>
+              <div class="brand-text-group">
+                <span class="brand-title">TITAN<span>SHIELD</span></span>
+                <span class="brand-tagline">Foundation & Waterproofing</span>
+              </div>
+            </a>
+            <p class="footer-desc">
+              TitanShield is a licensed structural engineering contractor specializing in permanent basement waterproofing, carbon-fiber crack reinforcement, and hydraulic foundation stabilization since 1999.
+            </p>
+            <div style="font-size: 0.8rem; color: #64748b; margin-top: 1rem;">
+              State Contractor Lic: #BC-994821 • Fully Bonded & Insured
+            </div>
+          </div>
+
+          <!-- Col 2: Navigation Links -->
+          <div>
+            <h4 class="footer-title"><a href="about.html" class="footer-heading-link">Quick Links</a></h4>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Home 1 – General</a></li>
+              <li><a href="home-2.html" class="footer-link">Home 2 – Waterproofing</a></li>
+              <li><a href="about.html" class="footer-link">About Us</a></li>
+              <li><a href="services.html" class="footer-link">All Services</a></li>
+              <li><a href="gallery.html" class="footer-link">Before & After Gallery</a></li>
+              <li><a href="pricing.html" class="footer-link">Pricing Packages</a></li>
+              <li><a href="blog.html" class="footer-link">Engineering Blog</a></li>
+              <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Core Services (Clickable Heading & Direct Anchors) -->
+          <div>
+            <h4 class="footer-title"><a href="services.html#core-services" class="footer-heading-link">Core Services</a></h4>
+            <ul class="footer-links">
+              <li><a href="services.html#basement-waterproofing" class="footer-link">Basement Waterproofing</a></li>
+              <li><a href="services.html#foundation-crack-repair" class="footer-link">Foundation Crack Repair</a></li>
+              <li><a href="services.html#foundation-stabilization" class="footer-link">Foundation Stabilization</a></li>
+              <li><a href="services.html#basement-leak-repair" class="footer-link">Basement Leak Repair</a></li>
+              <li><a href="services.html#sump-pump-installation" class="footer-link">Sump Pump Systems</a></li>
+              <li><a href="services.html#crawl-space-encapsulation" class="footer-link">Crawl Space Encapsulation</a></li>
+              <li><a href="services.html#drainage-system-installation" class="footer-link">Drainage Systems</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Contact & Emergency -->
+          <div>
+            <h4 class="footer-title"><a href="contact.html" class="footer-heading-link">Headquarters</a></h4>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>4820 Bedrock Blvd, Suite 300<br>Minneapolis, MN 55401</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>dispatch@titanshieldfoundation.com</span>
+            </div>
+
+            <div class="footer-emergency-card">
+              <div class="footer-emergency-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                <span>24/7 Water Dispatch</span>
+              </div>
+              <div class="footer-emergency-phone">(800) 555-SHIELD</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom & Admin Links -->
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-flex">
+          <div>
+            &copy; 2026 TitanShield Structural Systems Inc. All rights reserved.
+          </div>
+          <div class="footer-admin-links">
+            <a href="404.html">404 Page</a>
+            <a href="coming-soon.html">Coming Soon</a>
+            <a href="maintenance.html">Maintenance</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       SCHEDULE AN INSPECTION MODAL (Shared Across All Pages)
+       ======================================================================== -->
+  <div class="modal-overlay" id="inspectionModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">Schedule Free 27-Point Inspection</h3>
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+          Provide your property details below. A licensed structural inspector will confirm your appointment within 2 business hours.
+        </p>
+
+        <form class="needs-validation" id="inspectionBookingForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="inspFullName">Full Name *</label>
+            <input type="text" class="form-control" id="inspFullName" required placeholder="e.g. Robert Vance">
+            <span class="form-feedback">Please enter your full name.</span>
+          </div>
+
+          <div class="grid grid-2" style="gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label" for="inspEmail">Email Address *</label>
+              <input type="email" class="form-control" id="inspEmail" required placeholder="name@example.com">
+              <span class="form-feedback">Valid email required.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="inspPhone">Phone Number *</label>
+              <input type="tel" class="form-control" id="inspPhone" required placeholder="(555) 000-0000">
+              <span class="form-feedback">Valid phone required.</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="inspAddress">Property Address *</label>
+            <input type="text" class="form-control" id="inspAddress" required placeholder="Street address, City, State, Zip">
+            <span class="form-feedback">Property address required for site inspection.</span>
+          </div>
+
+          <div class="grid grid-2" style="gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label" for="inspService">Service Required *</label>
+              <select class="form-control" id="inspService" required>
+                <option value="">-- Select Service --</option>
+                <option value="Basement Waterproofing">Basement Waterproofing</option>
+                <option value="Foundation Crack Repair">Foundation Crack Repair</option>
+                <option value="Foundation Stabilization">Foundation Stabilization</option>
+                <option value="Basement Leak Repair">Basement Leak Repair</option>
+                <option value="Sump Pump Installation">Sump Pump Installation</option>
+                <option value="Drainage Systems">Drainage Systems</option>
+                <option value="Crawl Space Encapsulation">Crawl Space Encapsulation</option>
+                <option value="Moisture & Mold">Moisture & Mold Prevention</option>
+              </select>
+              <span class="form-feedback">Please select a primary service.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="inspDate">Preferred Inspection Date *</label>
+              <input type="date" class="form-control" id="inspDate" required>
+              <span class="form-feedback">Select preferred date.</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="inspDesc">Description of Foundation / Moisture Problem</label>
+            <textarea class="form-control" id="inspDesc" rows="3" placeholder="Describe symptoms: water seepage, horizontal cracks, sticky doors, musty odors..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+            Confirm & Schedule Inspection
+          </button>
+          <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.75rem;">
+            🔒 Zero obligation. We respect your privacy and never sell homeowner data.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

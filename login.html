@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin & Client Portal Login | TitanShield</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/rtl.css">
+</head>
+<body>
+
+  <!-- Top Utilities Bar -->
+  <div style="padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); background: var(--bg-surface);">
+    <a href="index.html" class="nav-brand" aria-label="TitanShield Homepage">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V8.26l7-3.89v8.62z"/></svg>
+      </div>
+      <div class="brand-text-group">
+        <span class="brand-title">TITAN<span>SHIELD</span></span>
+        <span class="brand-tagline">Foundation & Waterproofing</span>
+      </div>
+    </a>
+
+    <div style="display: flex; gap: 0.5rem; align-items: center;">
+      <button type="button" class="btn-toggle-dir" id="rtlToggle" title="Toggle Layout Direction">RTL</button>
+      <button type="button" class="btn-toggle-theme" id="themeToggle" title="Toggle Light / Dark Mode">
+        <svg class="theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="index.html" class="btn btn-outline btn-sm">← Back to Home</a>
+    </div>
+  </div>
+
+  <main class="auth-wrapper">
+    <div class="auth-card">
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <span class="badge badge-primary">Secure Portal</span>
+        <h1 style="font-size: 1.85rem; font-weight: 800; margin-bottom: 0.5rem;">Account Sign In</h1>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">Access warranty records, project status, or operations dashboard.</p>
+      </div>
+
+      <!-- Demo Quick Fill Pill -->
+      <div style="padding: 0.75rem 1rem; background: var(--color-primary-subtle); border-radius: var(--radius-sm); border: 1px solid rgba(2, 132, 199, 0.2); margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+        <div style="font-size: 0.8rem; color: var(--text-main);">
+          <strong>Demo Admin Login:</strong> admin@titanshield.com
+        </div>
+        <button type="button" class="btn btn-primary btn-sm" id="btnQuickFillDemo">Quick Fill</button>
+      </div>
+
+      <form class="needs-validation" id="loginForm" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="loginEmail">Email Address *</label>
+          <input type="email" class="form-control" id="loginEmail" required placeholder="admin@titanshield.com">
+          <span class="form-feedback">Valid email address required.</span>
+        </div>
+
+        <div class="form-group">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+            <label class="form-label" for="loginPassword" style="margin: 0;">Password *</label>
+            <a href="#" onclick="alert('Password reset link sent to demo email.')" style="font-size: 0.78rem;">Forgot password?</a>
+          </div>
+          <div style="position: relative;">
+            <input type="password" class="form-control" id="loginPassword" required placeholder="••••••••••••" style="padding-inline-end: 2.75rem;">
+            <button type="button" id="togglePasswordVisibility" style="position: absolute; inset-inline-end: 0.75rem; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--text-muted);" aria-label="Toggle password visibility">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <span class="form-feedback">Password is required.</span>
+        </div>
+
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; font-size: 0.85rem;">
+          <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+            <input type="checkbox" id="rememberMe">
+            <span>Remember this device</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+          Sign In to Dashboard
+        </button>
+      </form>
+
+      <div style="text-align: center; margin-top: 1.5rem; font-size: 0.88rem; color: var(--text-muted);">
+        Don't have an engineering account? <a href="register.html" style="font-weight: 700;">Create an Account</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Password toggle
+    const toggleBtn = document.getElementById('togglePasswordVisibility');
+    const pwdInput = document.getElementById('loginPassword');
+    if (toggleBtn && pwdInput) {
+      toggleBtn.addEventListener('click', () => {
+        const isPwd = pwdInput.type === 'password';
+        pwdInput.type = isPwd ? 'text' : 'password';
+      });
+    }
+
+    // Quick fill demo admin
+    const btnQuickFill = document.getElementById('btnQuickFillDemo');
+    if (btnQuickFill) {
+      btnQuickFill.addEventListener('click', () => {
+        document.getElementById('loginEmail').value = 'admin@titanshield.com';
+        document.getElementById('loginPassword').value = 'AdminPass2026!';
+      });
+    }
+
+    // On submit redirect to dashboard
+    const form = document.getElementById('loginForm');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        window.location.href = 'dashboard.html';
+      });
+    }
+  </script>
+</body>
+</html>
