@@ -6,7 +6,7 @@
 /* Page Hero Header Banner with Authentic Background Imagery */
 .page-hero {
   position: relative;
-  padding-block: var(--space-4xl) var(--space-3xl);
+  padding-block: 3.25rem 2.25rem;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -604,6 +604,7 @@
   gap: 0.65rem;
   border-top: 1px solid var(--border-color);
   padding-top: 1rem;
+  margin-top: auto;
 }
 
 .blog-author-avatar {
@@ -884,6 +885,123 @@
   justify-content: center;
   margin: 0 auto 1rem;
   box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+  overflow: hidden;
+}
+
+.author-avatar-img {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1rem;
+  border: 3px solid var(--color-primary);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+}
+
+.blog-author-avatar-img {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1.5px solid var(--color-primary);
+  display: block;
+}
+
+/* Step-by-Step Flowchart Visual Layout for About Us Protocol */
+.flowchart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  margin-top: 1.5rem;
+}
+
+.flowchart-step-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.flowchart-step-card:hover {
+  transform: translateX(4px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.flowchart-num {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.flowchart-body {
+  flex-grow: 1;
+}
+
+.flowchart-title {
+  font-size: 1.18rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.flowchart-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Map frame responsive wrapper */
+.map-frame-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 320px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  background: var(--bg-surface-alt);
+}
+
+.map-frame-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Whitepaper Card Alignment & Action */
+.whitepaper-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.whitepaper-card > div:last-child {
+  margin-top: auto;
 }
 
 .advisory-bulletin {

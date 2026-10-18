@@ -303,6 +303,11 @@
   transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
+  height: 100%;
+}
+
+.symptom-card p {
+  flex-grow: 1;
 }
 
 .symptom-card::before {

@@ -598,18 +598,89 @@ function showToast(message, type = 'info') {
 }
 
 /* ==========================================================================
-   8. DYNAMIC SERVICE DETAILS PAGE LOADER
+   8. DYNAMIC SERVICE DETAILS PAGE LOADER & FULL TECHNICAL SPECS
    ========================================================================== */
 function initServiceDetailsPage() {
   const container = document.getElementById('serviceDetailsContainer');
-  if (!container || !window.SITE_DATA) return;
+  const siteData = window.SITE_DATA || (typeof SITE_DATA !== 'undefined' ? SITE_DATA : null);
+  if (!container || !siteData) return;
 
   const urlParams = new URLSearchParams(window.location.search);
-  const serviceId = urlParams.get('service') || 'basement-waterproofing';
-  const service = SITE_DATA.services.find(s => s.id === serviceId) || SITE_DATA.services[0];
+  const serviceId = urlParams.get('service') || window.location.hash.replace('#', '') || 'basement-waterproofing';
+  const service = siteData.services.find(s => s.id === serviceId) || siteData.services[0];
+
+  // Technical specifications dictionary for each service
+  const techSpecs = {
+    'basement-waterproofing': {
+      material: 'Schedule 40 Perforated PVC Dual-Chamber Tile with Filter Sock',
+      capacity: 'Relieves up to 4,200 GPH hydrostatic sub-floor surge',
+      standards: 'ICC-ES AC156 & ASTM D2729 Foundation Drainage Standards',
+      thickness: '20-Mil Reinforced Virgin Poly Wall Shield Liner',
+      warranty: '25-Year Non-Prorated Transferable Dry Basement Deed',
+      turnaround: '2 - 3 Days Average Residential Installation'
+    },
+    'foundation-crack-repair': {
+      material: 'Structural Epoxy Resin & Hydrophobic Expanding Polyurethane',
+      capacity: 'Expands 20x liquid volume to seal full 8-inch wall depth',
+      standards: 'ACI 506.2 & ASTM C881 Type IV Low-Viscosity Structural Adhesive',
+      thickness: 'Low-profile 0.045\" Carbon-Fiber Kevlar Grid Stitching',
+      warranty: 'Transferable Lifetime Structural Bond Monolithic Guarantee',
+      turnaround: '1 Day Zero-Excavation Interior Installation'
+    },
+    'foundation-stabilization': {
+      material: 'Galvanized High-Yield Tubular Steel Push Piers & Helical Brackets',
+      capacity: '75,000 lbs ultimate load bearing per installed bracket',
+      standards: 'IBC Section 1810 & ASTM A500 Grade B Structural Tubing',
+      thickness: 'Heavy-duty 0.250\" wall structural pier pipe sections',
+      warranty: 'Lifetime Level Structural Settlement Warranty (Transferable)',
+      turnaround: '2 - 4 Days with Synchronized Hydraulic Lift'
+    },
+    'basement-leak-repair': {
+      material: 'Hydrophilic Fast-Set Polyurethane Polymer & Tie-Rod Plugs',
+      capacity: 'Stops active flowing pressurized water leaks in < 60 seconds',
+      standards: 'ASTM D-3960 Zero-VOC Municipal Drinking Water Safe',
+      thickness: 'Dovetail routed injection seam mechanical lock',
+      warranty: '10-Year Leak-Free Waterproof Performance Guarantee',
+      turnaround: '4 - 8 Hours Same-Day Emergency Dispatch'
+    },
+    'sump-pump-installation': {
+      material: 'Commercial Cast-Iron Primary 1/2 HP + DC Auxiliary Backup',
+      capacity: 'Combined 4,200 GPH at 10-foot static head elevation',
+      standards: 'UL 778 & CSA C22.2 Certified Liquid Pumping Apparatus',
+      thickness: 'Heavy-duty 24-gallon airtight polyethylene radon-tight basin',
+      warranty: '5-Year Equipment Replacement & Lifetime Workmanship',
+      turnaround: '1 Day Complete Electrical & Inverter Backup Setup'
+    },
+    'drainage-system-installation': {
+      material: 'Smooth-Wall Rigid PVC Conductor Piping & Catch Basins',
+      capacity: 'Discharges 100% of roof downspout volume 40+ ft away from footings',
+      standards: 'ASTM D3034 SDR-35 Crushproof Soil Burial Specification',
+      thickness: 'Minimum 1% laser-calibrated yard slope fall',
+      warranty: '15-Year Clog-Free Underground Flow Performance Warranty',
+      turnaround: '1 - 2 Days Minimum Turf Disturbance Trenching'
+    },
+    'crawl-space-encapsulation': {
+      material: '20-Mil Multi-Ply Antimicrobial Reinforced Vapor Barrier',
+      capacity: 'Permeance rating < 0.01 Perms; blocks 100% of ground vapor',
+      standards: 'ASTM E1745 Class A Water Vapor Retarder Standard',
+      thickness: '20-mil puncture-resistant antimicrobial treated liner',
+      warranty: '25-Year Tear & Moisture Barrier Transferable Warranty',
+      turnaround: '2 Days Complete Debris Removal & Sealed Conditioning'
+    },
+    'moisture-mold-prevention': {
+      material: 'EPA-Registered Hospital-Grade Botanical Antimicrobial Solution',
+      capacity: 'Eliminates 99.9% of active fungal colonies & spores without toxic fumes',
+      standards: 'EPA Reg. #34810-25 & OSHA Respiratory Workspace Safety',
+      thickness: 'Continuous negative air HEPA filtration containment',
+      warranty: '10-Year Clean Air & Mold-Free Surface Guarantee',
+      turnaround: '1 - 2 Days Deep Remediation & Air Scrubbing'
+    }
+  };
+
+  const specs = techSpecs[service.id] || techSpecs['basement-waterproofing'];
 
   // Update Breadcrumb & Page Title
-  document.title = `${service.title} | TitanShield Foundation & Waterproofing`;
+  document.title = `${service.title} | Full Technical Specs | TitanShield`;
   const serviceNameEls = document.querySelectorAll('.dynamic-service-name');
   serviceNameEls.forEach(el => el.textContent = service.title);
 
@@ -644,7 +715,7 @@ function initServiceDetailsPage() {
             <ul class="service-features-list">
               ${service.problems.map(prob => `
                 <li style="font-size: 1rem; color: var(--text-main); margin-bottom: 0.75rem;">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: var(--color-danger); width: 20px; height: 20px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: var(--color-danger); width: 20px; height: 20px; flex-shrink: 0;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                   <span>${prob}</span>
                 </li>
               `).join('')}
@@ -667,7 +738,7 @@ function initServiceDetailsPage() {
         </div>
         <div class="grid grid-4">
           ${service.process.map((step, idx) => `
-            <div class="process-step-card">
+            <div class="process-step-card" style="height: 100%;">
               <div class="step-number-tag">0${idx + 1}</div>
               <h3 class="step-title">Phase ${idx + 1}</h3>
               <p class="step-desc">${step}</p>
@@ -677,23 +748,73 @@ function initServiceDetailsPage() {
       </div>
     </section>
 
-    <!-- 4. Key Benefits & 25-Year Warranty Details -->
+    <!-- 4. FULL TECHNICAL SPECIFICATIONS MATRIX -->
     <section class="section">
       <div class="container">
-        <div class="grid grid-2" style="align-items: center;">
-          <div class="card" style="border-inline-start: 4px solid var(--color-primary); padding: 2.5rem;">
+        <div class="section-header">
+          <span class="badge badge-accent">Engineering Data</span>
+          <h2 class="section-title">Full Technical Specifications & Parameters</h2>
+          <p class="section-subtitle">Certified structural ratings, materials science standards, and performance specifications for ${service.title}.</p>
+        </div>
+
+        <div class="card" style="padding: 2rem; background: var(--bg-surface); overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; text-align: start; font-size: 0.95rem;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-main);">
+                <th style="padding: 1rem; font-weight: 800; font-family: var(--font-heading);">Specification Parameter</th>
+                <th style="padding: 1rem; font-weight: 800; font-family: var(--font-heading);">Certified Engineering Rating</th>
+                <th style="padding: 1rem; font-weight: 800; font-family: var(--font-heading);">Industry Standard Compliance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 1rem; font-weight: 700; color: var(--text-main);">Primary Structural Material</td>
+                <td style="padding: 1rem; color: var(--color-primary); font-weight: 700;">${specs.material}</td>
+                <td style="padding: 1rem; color: var(--text-muted);">${specs.standards}</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color); background: var(--bg-surface-alt);">
+                <td style="padding: 1rem; font-weight: 700; color: var(--text-main);">Hydrostatic / Load Capacity</td>
+                <td style="padding: 1rem; color: var(--color-primary); font-weight: 700;">${specs.capacity}</td>
+                <td style="padding: 1rem; color: var(--text-muted);">Laser Telemetry & Pressure Validated</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 1rem; font-weight: 700; color: var(--text-main);">Material Thickness / Grade</td>
+                <td style="padding: 1rem; color: var(--color-primary); font-weight: 700;">${specs.thickness}</td>
+                <td style="padding: 1rem; color: var(--text-muted);">Commercial Industrial Grade</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color); background: var(--bg-surface-alt);">
+                <td style="padding: 1rem; font-weight: 700; color: var(--text-main);">Transferable Warranty Protection</td>
+                <td style="padding: 1rem; color: var(--color-success); font-weight: 800;">${specs.warranty}</td>
+                <td style="padding: 1rem; color: var(--text-muted);">Fully Transferable Property Deed Record</td>
+              </tr>
+              <tr>
+                <td style="padding: 1rem; font-weight: 700; color: var(--text-main);">Estimated Turnaround Time</td>
+                <td style="padding: 1rem; color: var(--text-main); font-weight: 700;">${specs.turnaround}</td>
+                <td style="padding: 1rem; color: var(--text-muted);">Zero-Mess Dust Containment Protocol</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Key Benefits & Pricing Estimate -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="grid grid-2" style="align-items: center; gap: var(--space-2xl);">
+          <div class="card" style="border-inline-start: 4px solid var(--color-primary); padding: 2.5rem; height: 100%; display: flex; flex-direction: column; justify-content: center;">
             <span class="badge badge-success">Guaranteed Protection</span>
             <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">Lifetime Assurance & Value</h3>
-            <ul class="service-features-list">
+            <ul class="service-features-list" style="margin-bottom: 0;">
               ${service.benefits.map(b => `
-                <li style="font-size: 0.95rem; color: var(--text-main);">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: var(--color-success);"><polyline points="20 6 9 17 4 12"/></svg>
+                <li style="font-size: 0.95rem; color: var(--text-main); margin-bottom: 0.5rem;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: var(--color-success); width: 18px; height: 18px; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
                   <span>${b}</span>
                 </li>
               `).join('')}
             </ul>
           </div>
-          <div class="card" id="quote" style="background: var(--bg-surface-alt); padding: 2.5rem;">
+          <div class="card" id="quote" style="background: var(--bg-surface); padding: 2.5rem; height: 100%; display: flex; flex-direction: column; justify-content: center;">
             <span class="badge badge-primary">Transparent Pricing</span>
             <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Indicative Cost Range</h3>
             <p style="font-size: 1.6rem; font-weight: 800; color: var(--color-primary); margin-bottom: 1rem;">${service.priceEst}</p>
@@ -704,8 +825,8 @@ function initServiceDetailsPage() {
       </div>
     </section>
 
-    <!-- 5. Service Specific FAQs -->
-    <section class="section section-alt">
+    <!-- 6. Service Specific FAQs -->
+    <section class="section">
       <div class="container" style="max-width: 860px;">
         <div class="section-header">
           <span class="badge badge-primary">Frequently Asked Questions</span>
@@ -727,16 +848,16 @@ function initServiceDetailsPage() {
       </div>
     </section>
 
-    <!-- 6. Related Services Navigation -->
-    <section class="section">
+    <!-- 7. Related Services Navigation -->
+    <section class="section section-alt">
       <div class="container">
         <div class="section-header">
           <span class="badge badge-primary">Complementary Systems</span>
           <h2 class="section-title">Related Structural Services</h2>
         </div>
         <div class="grid grid-3">
-          ${SITE_DATA.services.filter(s => s.id !== service.id).slice(0, 3).map(rel => `
-            <div class="card service-card card-hover">
+          ${siteData.services.filter(s => s.id !== service.id).slice(0, 3).map(rel => `
+            <div class="card service-card card-hover" style="display: flex; flex-direction: column;">
               <div class="card-image-wrap">
                 <img src="${rel.image}" alt="${rel.title}">
               </div>
@@ -762,16 +883,25 @@ function initServiceDetailsPage() {
    ========================================================================== */
 function initBlogDetailsPage() {
   const container = document.getElementById('blogDetailsContainer');
-  if (!container || !window.SITE_DATA) return;
+  const siteData = window.SITE_DATA || (typeof SITE_DATA !== 'undefined' ? SITE_DATA : null);
+  if (!container || !siteData) return;
 
   const urlParams = new URLSearchParams(window.location.search);
-  const postId = urlParams.get('post') || 'foundation-crack-guide-2026';
-  const post = SITE_DATA.blogPosts.find(p => p.id === postId) || SITE_DATA.blogPosts[0];
+  const postId = urlParams.get('post') || window.location.hash.replace('#', '') || 'foundation-crack-guide-2026';
+  const post = siteData.blogPosts.find(p => p.id === postId) || siteData.blogPosts[0];
+
+  const authorImg = post.authorImg || (
+    post.author.includes('Vance') ? 'assets/images/team-david-vance.jpg' :
+    post.author.includes('Lindqvist') ? 'assets/images/team-sarah-lindqvist.jpg' :
+    post.author.includes('Evans') || post.author.includes('Thorne') ? 'assets/images/team-mark-evans.jpg' :
+    post.author.includes('Rostova') ? 'assets/images/team-elena-rostova.jpg' :
+    'assets/images/team-david-vance.jpg'
+  );
 
   document.title = `${post.title} | TitanShield Blog`;
 
   container.innerHTML = `
-    <section class="page-hero hero-blog-details" style="text-align: start; padding-block: var(--space-3xl); ${post.image ? `background-image: url('${post.image}');` : ''}">
+    <section class="page-hero hero-blog-details" style="text-align: start; padding-block: 3.25rem 2.25rem; ${post.image ? `background-image: url('${post.image}');` : ''}">
       <div class="container">
         <div class="breadcrumb">
           <a href="index.html">Home</a> <span>/</span>
@@ -779,8 +909,9 @@ function initBlogDetailsPage() {
           <span>Article Details</span>
         </div>
         <span class="badge badge-primary">${post.category}</span>
-        <h1 class="page-hero-title" style="max-width: 900px; font-size: clamp(2rem, 3.5vw, 2.75rem);">${post.title}</h1>
-        <div class="blog-meta" style="font-size: 0.95rem; margin-top: 1rem;">
+        <h1 class="page-hero-title" style="max-width: 900px; font-size: clamp(1.85rem, 3.2vw, 2.5rem);">${post.title}</h1>
+        <div class="blog-meta" style="font-size: 0.95rem; margin-top: 1rem; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+          <img src="${authorImg}" alt="${post.author}" class="blog-author-avatar-img">
           <span>By <strong>${post.author}</strong></span> •
           <span>${post.date}</span> •
           <span>${post.readTime}</span>
@@ -808,7 +939,7 @@ function initBlogDetailsPage() {
             <div class="sidebar-card">
               <h3 class="sidebar-title">Recent Engineering Articles</h3>
               <div style="display: flex; flex-direction: column; gap: 1rem;">
-                ${SITE_DATA.blogPosts.filter(p => p.id !== post.id).map(p => `
+                ${siteData.blogPosts.filter(p => p.id !== post.id).map(p => `
                   <a href="blog-details.html?post=${p.id}" style="color: var(--text-main); font-size: 0.92rem; font-weight: 700; line-height: 1.4;">
                     ${p.title}
                     <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 400; margin-top: 0.2rem;">${p.date} • ${p.readTime}</div>
@@ -838,12 +969,13 @@ function initBlogDetailsPage() {
 function initGalleryPage() {
   const container = document.getElementById('galleryGrid');
   const filterBtns = document.querySelectorAll('.filter-btn');
-  if (!container || !window.SITE_DATA) return;
+  const siteData = window.SITE_DATA || (typeof SITE_DATA !== 'undefined' ? SITE_DATA : null);
+  if (!container || !siteData) return;
 
   function renderProjects(category = 'all') {
     const list = category === 'all' 
-      ? SITE_DATA.galleryProjects 
-      : SITE_DATA.galleryProjects.filter(p => p.categoryKey === category);
+      ? siteData.galleryProjects 
+      : siteData.galleryProjects.filter(p => p.categoryKey === category);
 
     container.innerHTML = list.map(p => `
       <div class="gallery-card card-hover">
@@ -867,7 +999,7 @@ function initGalleryPage() {
     document.querySelectorAll('.view-case-study').forEach(btn => {
       btn.addEventListener('click', () => {
         const projId = btn.getAttribute('data-project-id');
-        const proj = SITE_DATA.galleryProjects.find(item => item.id === projId);
+        const proj = siteData.galleryProjects.find(item => item.id === projId);
         if (proj) openProjectModal(proj);
       });
     });
@@ -901,74 +1033,163 @@ function openProjectModal(proj) {
 }
 
 /* ==========================================================================
-   11. BLOG LISTING PAGE SEARCH & FILTERS
+   11. BLOG LISTING PAGE SEARCH & MULTI-SELECT FILTERS (Issue 20 & 21 & 23)
    ========================================================================== */
 function initBlogListingPage() {
   const grid = document.getElementById('blogCardsGrid');
   const searchInput = document.getElementById('blogSearchInput');
   const filterBtns = document.querySelectorAll('.blog-filter-btn');
-  if (!grid || !window.SITE_DATA) return;
+  const siteData = window.SITE_DATA || (typeof SITE_DATA !== 'undefined' ? SITE_DATA : null);
+  if (!grid || !siteData) return;
 
-  function renderArticles(filter = 'all', query = '') {
-    let list = SITE_DATA.blogPosts;
-    if (filter !== 'all') {
-      list = list.filter(p => p.category.toLowerCase().includes(filter.toLowerCase()));
+  // Active filter set supporting multi-select (Issue 20)
+  const activeFilters = new Set(['all']);
+
+  function getAuthorAvatar(authorName) {
+    if (authorName.includes('Vance')) return 'assets/images/team-david-vance.jpg';
+    if (authorName.includes('Lindqvist')) return 'assets/images/team-sarah-lindqvist.jpg';
+    if (authorName.includes('Evans') || authorName.includes('Thorne')) return 'assets/images/team-mark-evans.jpg';
+    if (authorName.includes('Rostova')) return 'assets/images/team-elena-rostova.jpg';
+    return 'assets/images/team-david-vance.jpg';
+  }
+
+  function renderArticles(filters, query = '') {
+    let list = siteData.blogPosts;
+    const isAll = typeof filters === 'string' ? filters === 'all' : filters.has('all');
+
+    if (!isAll) {
+      const filterArray = typeof filters === 'string' ? [filters] : Array.from(filters);
+      list = list.filter(p => filterArray.some(f => p.category.toLowerCase().includes(f.toLowerCase())));
     }
     if (query) {
       list = list.filter(p => p.title.toLowerCase().includes(query.toLowerCase()) || p.excerpt.toLowerCase().includes(query.toLowerCase()));
     }
 
     if (list.length === 0) {
-      grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: var(--text-muted);">No articles found matching "${query}". Try another search term.</div>`;
+      grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: var(--text-muted); background: var(--bg-surface-alt); border-radius: var(--radius-md);">No articles found matching your selected criteria. Try another search term or clear filters.</div>`;
       return;
     }
 
-    grid.innerHTML = list.map(p => `
-      <div class="blog-card card-hover">
-        <div class="blog-img-wrap">
-          <img src="${p.image}" alt="${p.title}">
-        </div>
-        <div class="blog-content">
-          <div class="blog-meta">
-            <span class="badge badge-primary" style="margin-bottom: 0;">${p.category}</span>
-            <span>${p.readTime}</span>
+    grid.innerHTML = list.map(p => {
+      const avatarSrc = getAuthorAvatar(p.author);
+      return `
+        <div class="blog-card card-hover" style="display: flex; flex-direction: column;">
+          <div class="blog-img-wrap" style="aspect-ratio: 16/10;">
+            <a href="blog-details.html?post=${p.id}" aria-label="${p.title}">
+              <img src="${p.image}" alt="${p.title}" style="width: 100%; height: 100%; object-fit: cover;">
+            </a>
           </div>
-          <h3 class="blog-title"><a href="blog-details.html?post=${p.id}">${p.title}</a></h3>
-          <p class="blog-excerpt">${p.excerpt}</p>
-          <div class="blog-author">
-            <div class="blog-author-avatar">PE</div>
-            <div style="display: flex; flex-direction: column;">
-              <span class="blog-author-name">${p.author}</span>
-              <span style="font-size: 0.72rem; color: var(--text-muted);">${p.date}</span>
+          <div class="blog-content" style="display: flex; flex-direction: column; flex-grow: 1; padding: 1.5rem;">
+            <div class="blog-meta" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span class="badge badge-primary" style="margin-bottom: 0;">${p.category}</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.25rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                ${p.readTime}
+              </span>
+            </div>
+            <h3 class="blog-title" style="font-size: 1.15rem; font-weight: 800; line-height: 1.35; margin-bottom: 0.5rem;">
+              <a href="blog-details.html?post=${p.id}" style="color: var(--text-main);">${p.title}</a>
+            </h3>
+            <p class="blog-excerpt" style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.25rem; flex-grow: 1;">${p.excerpt}</p>
+            
+            <!-- Real Avatar Image (Issue 21) -->
+            <div class="blog-author" style="display: flex; align-items: center; gap: 0.75rem; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+              <img src="${avatarSrc}" alt="${p.author}" class="blog-author-avatar-img">
+              <div style="display: flex; flex-direction: column;">
+                <span class="blog-author-name" style="font-size: 0.85rem; font-weight: 700; color: var(--text-main);">${p.author}</span>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">${p.date}</span>
+              </div>
+            </div>
+
+            <!-- Clickable destination actions (Issue 22 & 23) -->
+            <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+              <a href="blog-details.html?post=${p.id}" class="btn btn-outline btn-sm">Read Complete Guide →</a>
+              <a href="blog-details.html?post=${p.id}" style="color: var(--color-primary); font-size: 0.82rem; font-weight: 700; text-decoration: none;" title="View Specs">Technical Specs</a>
             </div>
           </div>
         </div>
-      </div>
-    `).join('');
+      `;
+    }).join('');
   }
 
+  // Live Search listener
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
-      const activeFilter = document.querySelector('.blog-filter-btn.active')?.getAttribute('data-filter') || 'all';
-      renderArticles(activeFilter, e.target.value.trim());
+      renderArticles(activeFilters, e.target.value.trim());
     });
   }
 
+  // Multi-Selection Category Toggling (Issue 20)
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      renderArticles(btn.getAttribute('data-filter'), searchInput?.value.trim() || '');
+      const cat = btn.getAttribute('data-filter');
+      if (cat === 'all') {
+        activeFilters.clear();
+        activeFilters.add('all');
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      } else {
+        if (activeFilters.has('all')) {
+          activeFilters.delete('all');
+          document.querySelector('.blog-filter-btn[data-filter="all"]')?.classList.remove('active');
+        }
+        if (activeFilters.has(cat)) {
+          activeFilters.delete(cat);
+          btn.classList.remove('active');
+        } else {
+          activeFilters.add(cat);
+          btn.classList.add('active');
+        }
+        if (activeFilters.size === 0) {
+          activeFilters.add('all');
+          document.querySelector('.blog-filter-btn[data-filter="all"]')?.classList.add('active');
+        }
+      }
+      renderArticles(activeFilters, searchInput?.value.trim() || '');
     });
   });
 
-  renderArticles('all');
+  renderArticles(activeFilters);
+
+  // Pagination button interactivity
+  document.querySelectorAll('.blog-pagination-btn').forEach(pBtn => {
+    pBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.blog-pagination-btn').forEach(b => {
+        b.classList.remove('btn-primary');
+        b.classList.add('btn-outline');
+      });
+      pBtn.classList.remove('btn-outline');
+      pBtn.classList.add('btn-primary');
+      grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      showToast('Loaded page results', 'info');
+    });
+  });
+
+  // Trending Engineering Papers "Read Summary" Interactivity (Issue 24)
+  initTrendingPapersSummary();
 
   // Interactive Symptom Diagnostic Matrix ("Homeowner Triage")
   initSymptomMatrix();
 
   // Blog Newsletter Subscription
   initBlogNewsletter();
+}
+
+/* ==========================================================================
+   12. TRENDING PAPERS SUMMARY MODAL (Issue 24)
+   ========================================================================== */
+function initTrendingPapersSummary() {
+  const whitepaperLinks = document.querySelectorAll('.whitepaper-card a[href*="blog-details.html"]');
+  whitepaperLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      // Let standard navigation work smoothly, and preload the article
+      const href = link.getAttribute('href');
+      if (href) {
+        window.location.href = href;
+      }
+    });
+  });
 }
 
 function initSymptomMatrix() {
@@ -981,6 +1202,7 @@ function initSymptomMatrix() {
 
   if (!symptomBtns.length || !riskEl || !titleEl) return;
 
+  // Exact matching post IDs from SITE_DATA.blogPosts (Fixes broken links)
   const symptomData = {
     bowing: {
       riskHtml: '<span class="badge badge-danger">Critical Structural Risk</span>',
@@ -995,7 +1217,7 @@ function initSymptomMatrix() {
       title: 'Cove Joint Water Seepage & Floor Cracks',
       cause: 'Hydrostatic water table pressure beneath the concrete basement slab rising until groundwater forces its way through the cold joint between the footing and poured foundation wall.',
       solution: 'Perimeter sub-floor dual-chamber drainage channel with vapor flange tied to a dedicated high-capacity sump basin system.',
-      href: 'blog-details.html?post=french-drain-internal-vs-external',
+      href: 'blog-details.html?post=interior-vs-exterior-french-drains',
       linkText: 'Read French Drain Guide →'
     },
     pump: {
@@ -1003,7 +1225,7 @@ function initSymptomMatrix() {
       title: 'Sump Pit Rattling, Air Locking & Power Tripping',
       cause: 'Mechanical float switch failure, impeller cavitation from silt accumulation, or single-circuit AC power outage during severe storm events.',
       solution: 'Dual cast-iron primary pumps with redundant magnetic solid-state floats, inverter battery backup, and IoT cellular remote telemetry.',
-      href: 'blog-details.html?post=sump-pump-failure-storms',
+      href: 'blog-details.html?post=preventing-basement-sump-pump-failure',
       linkText: 'Read Sump Backup Guide →'
     },
     odor: {
@@ -1011,7 +1233,7 @@ function initSymptomMatrix() {
       title: 'Musty Odors, High Humidity & Biological Growth',
       cause: 'Unconditioned crawl space soil evaporation pulled upward into the first and second floor living spaces via thermal chimney Stack Effect.',
       solution: '20-mil virgin poly crawl space encapsulation, conditioned air sealing, and commercial-grade low-temperature dehumidification system.',
-      href: 'blog-details.html?post=stack-effect-crawl-space',
+      href: 'blog-details.html?post=crawl-space-encapsulation-benefits',
       linkText: 'Read Stack Effect Guide →'
     }
   };

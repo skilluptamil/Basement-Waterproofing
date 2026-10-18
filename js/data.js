@@ -516,7 +516,14 @@ const SITE_DATA = {
     messages: [
       { sender: "Jonathan Reed", email: "j.reed@example.com", date: "2 hours ago", subject: "Quote question regarding 25ft bowing wall", preview: "Hi TitanShield team, I had your engineer inspect my foundation on Tuesday..." },
       { sender: "Claire Morris", email: "claire.m@example.com", date: "5 hours ago", subject: "Sump pump battery backup check", preview: "Just following up on our annual maintenance schedule for the dual battery system..." },
-      { sender: "Frank Miller", email: "fmiller@example.com", date: "1 day ago", subject: "Transfer of warranty for home sale", preview: "We are closing on our house next week and need the warranty transfer documents..." }
     ]
   }
 };
+
+// Global Browser Attachment & Node Export
+if (typeof window !== 'undefined') {
+  window.SITE_DATA = SITE_DATA;
+}
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = SITE_DATA;
+}
