@@ -81,23 +81,7 @@
       </div>
     </section>
 
-    <!-- 2. Diagnostic Inspection Information -->
-    <section class="section-sm section-alt">
-      <div class="container">
-        <div class="card" style="padding: 1.5rem 2rem; background: var(--bg-surface); border-inline-start: 4px solid var(--color-primary); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-          <div>
-            <div style="font-weight: 800; font-size: 1.15rem;">Free 27-Point Physical Diagnostic</div>
-            <div style="font-size: 0.88rem; color: var(--text-muted);">Includes laser floor elevation profile, wall deflection scan, and an exact written proposal.</div>
-          </div>
-          <div style="display: flex; align-items: center; gap: 1rem;">
-            <span style="font-size: 1.5rem; font-weight: 900; color: var(--color-success);">$0.00</span>
-            <button class="btn btn-primary btn-sm open-inspection-modal">Book Free Inspection</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. Service Pricing Packages -->
+    <!-- 2. Service Pricing Packages -->
     <section class="section">
       <div class="container">
         <div class="section-header">
@@ -109,10 +93,12 @@
         <div class="pricing-grid">
           <!-- Package 1 -->
           <div class="pricing-card">
-            <h3 class="pricing-title">Essential Dry Shield</h3>
-            <p class="pricing-desc">Ideal for localized basement leaks, weeping wall fractures, and minor cove joint seepage.</p>
-            <div class="pricing-price">$1,850 <span>/ starting</span></div>
-            <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0;">Financing from $49/mo</p>
+            <div class="pricing-card-header">
+              <h3 class="pricing-title">Essential Dry Shield</h3>
+              <p class="pricing-desc">Ideal for localized basement leaks, weeping wall fractures, and minor cove joint seepage.</p>
+              <div class="pricing-price">$1,850 <span>/ starting</span></div>
+              <p class="pricing-financing">Financing from $49/mo</p>
+            </div>
             <ul class="pricing-features">
               <li class="pricing-feature-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -128,7 +114,7 @@
               </li>
               <li class="pricing-feature-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>10-Year Leak Stop Guarantee</span>
+                <span><strong>10-Year Leak Stop Guarantee</strong></span>
               </li>
             </ul>
             <button class="btn btn-outline open-inspection-modal" style="width: 100%;">Select Package</button>
@@ -137,10 +123,12 @@
           <!-- Package 2 (Featured) -->
           <div class="pricing-card featured">
             <span class="pricing-featured-badge">Most Popular</span>
-            <h3 class="pricing-title">Complete Basement Shield</h3>
-            <p class="pricing-desc">Full sub-floor French drain perimeter protection, wall vapor barrier, and dual smart sump station.</p>
-            <div class="pricing-price">$5,400 <span>/ starting</span></div>
-            <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0;">Financing from $119/mo</p>
+            <div class="pricing-card-header">
+              <h3 class="pricing-title">Complete Basement Shield</h3>
+              <p class="pricing-desc">Full sub-floor French drain perimeter protection, wall vapor barrier, and dual smart sump station.</p>
+              <div class="pricing-price">$5,400 <span>/ starting</span></div>
+              <p class="pricing-financing">Financing from $119/mo</p>
+            </div>
             <ul class="pricing-features">
               <li class="pricing-feature-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -168,10 +156,12 @@
 
           <!-- Package 3 -->
           <div class="pricing-card">
-            <h3 class="pricing-title">Whole-Home Structural Master</h3>
-            <p class="pricing-desc">Complete foundation stabilization with hydraulic steel push piers and wall carbon-fiber grid stitching.</p>
-            <div class="pricing-price">$9,800 <span>/ starting</span></div>
-            <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0;">Financing from $195/mo</p>
+            <div class="pricing-card-header">
+              <h3 class="pricing-title">Whole-Home Structural Master</h3>
+              <p class="pricing-desc">Complete foundation stabilization with hydraulic steel push piers and wall carbon-fiber grid stitching.</p>
+              <div class="pricing-price">$9,800 <span>/ starting</span></div>
+              <p class="pricing-financing">Financing from $195/mo</p>
+            </div>
             <ul class="pricing-features">
               <li class="pricing-feature-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -200,7 +190,7 @@
       </div>
     </section>
 
-    <!-- 4. Package Comparison Matrix -->
+    <!-- 3. Package Comparison Matrix -->
     <section class="section section-alt">
       <div class="container">
         <div class="section-header">
@@ -289,7 +279,7 @@
       </div>
     </section>
 
-    <!-- 6. Pricing FAQs -->
+    <!-- 5. Pricing FAQs -->
     <section class="section section-alt">
       <div class="container" style="max-width: 860px;">
         <div class="section-header">
@@ -325,11 +315,11 @@
       </div>
     </section>
 
-    <!-- 7. Request-A-Quote CTA -->
+    <!-- 6. Request-A-Quote CTA -->
     <section class="section">
       <div class="container">
-        <div class="card" style="background: linear-gradient(135deg, #0c2340 0%, #0369a1 100%); color: #ffffff; padding: 3.5rem 2.5rem; text-align: center; border: none; border-radius: var(--radius-xl); box-shadow: var(--shadow-xl);">
-          <span class="badge badge-accent" style="margin-bottom: 1rem;">Get An Itemized Proposal</span>
+        <div class="card cta-banner-card" style="background: linear-gradient(135deg, #0c2340 0%, #0369a1 100%); color: #ffffff; padding: 3.5rem 2.5rem; text-align: center; align-items: center; border: none; border-radius: var(--radius-xl); box-shadow: var(--shadow-xl);">
+          <span class="badge badge-accent" style="margin-bottom: 1rem; align-self: center; margin-inline: auto;">Get An Itemized Proposal</span>
           <h2 style="font-size: clamp(2rem, 3.5vw, 2.75rem); color: #ffffff; margin-bottom: 1rem;">Receive Your Custom Repair Quote</h2>
           <p style="color: #cbd5e1; max-width: 620px; margin-inline: auto; font-size: 1.1rem; margin-bottom: 2rem;">
             Schedule your free on-site engineering assessment. We provide a guaranteed price lock valid for 60 days.

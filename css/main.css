@@ -87,6 +87,17 @@ html {
   margin-bottom: 0.85rem;
 }
 
+.card.text-center > .badge,
+.card[style*="text-align: center"] > .badge,
+.card[style*="text-align:center"] > .badge,
+.cta-banner-card > .badge,
+.cta-banner-card .badge,
+.text-center > .badge,
+.badge-center {
+  align-self: center;
+  margin-inline: auto;
+}
+
 .badge-primary {
   background: var(--color-primary-subtle);
   color: var(--color-primary-dark);
@@ -267,6 +278,14 @@ html {
   transition: all var(--transition-normal);
   display: flex;
   flex-direction: column;
+}
+
+.card.text-center,
+.card[style*="text-align: center"],
+.card[style*="text-align:center"],
+.cta-banner-card {
+  align-items: center;
+  text-align: center;
 }
 
 .card-hover:hover {

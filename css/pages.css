@@ -204,6 +204,63 @@
 }
 
 /* --------------------------------------------------------------------------
+   CORE SERVICES OVERVIEW GRID STYLES (#core-services)
+   -------------------------------------------------------------------------- */
+#core-services .service-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  transition: all var(--transition-normal);
+}
+
+#core-services .service-card .card-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  padding: 1.5rem 1.25rem 1.75rem;
+}
+
+#core-services .service-card .card-title {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  min-height: 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.35;
+  width: 100%;
+}
+
+#core-services .service-card .card-desc {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+  min-height: 4.2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+}
+
+#core-services .service-card .card-content .btn,
+#core-services .service-card .card-content a.btn {
+  margin-top: auto;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
    ABOUT US STYLES
    -------------------------------------------------------------------------- */
 .team-grid {
@@ -428,16 +485,27 @@
   text-transform: uppercase;
 }
 
+.pricing-card-header {
+  text-align: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+}
+
 .pricing-title {
   font-size: 1.4rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .pricing-desc {
   font-size: 0.88rem;
   color: var(--text-muted);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  line-height: 1.55;
+  min-height: 2.6rem;
 }
 
 .pricing-price {
@@ -446,7 +514,8 @@
   font-weight: 900;
   color: var(--text-main);
   line-height: 1;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.35rem;
+  text-align: center;
 }
 
 .pricing-price span {
@@ -455,14 +524,23 @@
   color: var(--text-muted);
 }
 
+.pricing-financing {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0;
+  text-align: center;
+  font-weight: 500;
+}
+
 .pricing-features {
   list-style: none;
-  margin-block: 2rem;
+  margin: 0 0 2rem 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
   flex-grow: 1;
+  text-align: start;
 }
 
 .pricing-feature-item {
@@ -856,15 +934,19 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-lg);
+  align-items: stretch;
 }
 
 .author-team-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 1.75rem 1.25rem;
+  padding: 2rem 1.25rem;
   text-align: center;
   transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .author-team-card:hover {
@@ -889,14 +971,57 @@
 }
 
 .author-avatar-img {
-  width: 72px;
-  height: 72px;
+  width: 76px;
+  height: 76px;
   border-radius: var(--radius-full);
   object-fit: cover;
   display: block;
-  margin: 0 auto 1rem;
+  margin: 0 auto 1.25rem;
   border: 3px solid var(--color-primary);
   box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+  flex-shrink: 0;
+}
+
+.author-team-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+  color: var(--text-main);
+  min-height: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.author-team-role {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.4rem;
+  min-height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.35;
+}
+
+.author-team-cred {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 0.85rem;
+  min-height: 2.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.35;
+}
+
+.author-team-bio {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0;
+  flex-grow: 1;
 }
 
 .blog-author-avatar-img {

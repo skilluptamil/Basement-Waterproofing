@@ -23,6 +23,30 @@
   text-align: right;
 }
 
+[dir="rtl"] .cta-banner-card,
+[dir="rtl"] .card.text-center,
+[dir="rtl"] .card[style*="text-align: center"],
+[dir="rtl"] .card[style*="text-align:center"] {
+  text-align: center;
+  align-items: center;
+}
+
+[dir="rtl"] .pricing-card-header,
+[dir="rtl"] .pricing-card-header * {
+  text-align: center;
+}
+
+[dir="rtl"] #core-services .service-card .card-content,
+[dir="rtl"] #core-services .service-card .card-title,
+[dir="rtl"] #core-services .service-card .card-desc {
+  text-align: center;
+}
+
+[dir="rtl"] #core-services .service-card .card-content .btn,
+[dir="rtl"] #core-services .service-card .card-content a.btn {
+  align-self: center;
+}
+
 [dir="rtl"] .ba-handle {
   /* In RTL, handle position logic is handled with start/end */
 }

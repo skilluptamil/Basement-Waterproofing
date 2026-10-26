@@ -1151,21 +1151,6 @@ function initBlogListingPage() {
 
   renderArticles(activeFilters);
 
-  // Pagination button interactivity
-  document.querySelectorAll('.blog-pagination-btn').forEach(pBtn => {
-    pBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      document.querySelectorAll('.blog-pagination-btn').forEach(b => {
-        b.classList.remove('btn-primary');
-        b.classList.add('btn-outline');
-      });
-      pBtn.classList.remove('btn-outline');
-      pBtn.classList.add('btn-primary');
-      grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      showToast('Loaded page results', 'info');
-    });
-  });
-
   // Trending Engineering Papers "Read Summary" Interactivity (Issue 24)
   initTrendingPapersSummary();
 

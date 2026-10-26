@@ -223,13 +223,6 @@
         <div class="blog-grid" id="blogCardsGrid">
           <!-- Dynamically populated via initBlogListingPage() in js/main.js -->
         </div>
-
-        <!-- Pagination -->
-        <div style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 3.5rem;">
-          <button class="btn btn-primary btn-sm">Page 1</button>
-          <button class="btn btn-outline btn-sm">Page 2</button>
-          <button class="btn btn-outline btn-sm">Next →</button>
-        </div>
       </div>
     </section>
 
@@ -326,34 +319,34 @@
         <div class="author-team-grid">
           <div class="author-team-card card-hover">
             <img src="assets/images/team-david-vance.jpg" alt="David Vance, PE" class="author-avatar-img">
-            <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.25rem;">David Vance, PE</h3>
-            <div style="font-size: 0.82rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem;">Senior Structural Forensic PE</div>
-            <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.75rem;">Lic #PE-44821 • 25+ Yrs Field Diagnostics</div>
-            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0;">Specializes in foundation shear failure, hydraulic pier calculations, and carbon-fiber reinforcement.</p>
+            <h3 class="author-team-name">David Vance, PE</h3>
+            <div class="author-team-role">Senior Structural Forensic PE</div>
+            <div class="author-team-cred">Lic #PE-44821 • 25+ Yrs Field Diagnostics</div>
+            <p class="author-team-bio">Specializes in foundation shear failure, hydraulic pier calculations, and carbon-fiber reinforcement.</p>
           </div>
 
           <div class="author-team-card card-hover">
             <img src="assets/images/team-elena-rostova.jpg" alt="Elena Rostova, PhD, PE" class="author-avatar-img">
-            <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.25rem;">Elena Rostova, PhD, PE</h3>
-            <div style="font-size: 0.82rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem;">Soil Hydrodynamics Specialist</div>
-            <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.75rem;">Lic #PE-61092 • Author of 18 Geotech Papers</div>
-            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0;">Researches expansive clay mineralogy, subterranean hydrostatic thrust, and perimeter drain efficiency.</p>
+            <h3 class="author-team-name">Elena Rostova, PhD, PE</h3>
+            <div class="author-team-role">Soil Hydrodynamics Specialist</div>
+            <div class="author-team-cred">Lic #PE-61092 • Author of 18 Geotech Papers</div>
+            <p class="author-team-bio">Researches expansive clay mineralogy, subterranean hydrostatic thrust, and perimeter drain efficiency.</p>
           </div>
 
           <div class="author-team-card card-hover">
             <img src="assets/images/team-mark-evans.jpg" alt="Marcus Evans" class="author-avatar-img">
-            <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.25rem;">Marcus Evans</h3>
-            <div style="font-size: 0.82rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem;">Master Waterproofing Specialist</div>
-            <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.75rem;">BPEC Fellow • 21 Yrs Field Operations</div>
-            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0;">Directs sub-floor perimeter French drain installations, dual sump station integration, and cove joint seals.</p>
+            <h3 class="author-team-name">Marcus Evans</h3>
+            <div class="author-team-role">Master Waterproofing Specialist</div>
+            <div class="author-team-cred">BPEC Fellow • 21 Yrs Field Operations</div>
+            <p class="author-team-bio">Directs sub-floor perimeter French drain installations, dual sump station integration, and cove joint seals.</p>
           </div>
 
           <div class="author-team-card card-hover">
             <img src="assets/images/team-sarah-lindqvist.jpg" alt="Sarah Lindqvist" class="author-avatar-img">
-            <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.25rem;">Sarah Lindqvist</h3>
-            <div style="font-size: 0.82rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem;">Smart Sensor & IoT Telemetry Lead</div>
-            <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.75rem;">Certified Moisture Assessor (CMA)</div>
-            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0;">Oversees wireless crack gauge monitoring, smart sump pit sensors, and automated early-warning telemetry.</p>
+            <h3 class="author-team-name">Sarah Lindqvist</h3>
+            <div class="author-team-role">Smart Sensor & IoT Telemetry Lead</div>
+            <div class="author-team-cred">Certified Moisture Assessor (CMA)</div>
+            <p class="author-team-bio">Oversees wireless crack gauge monitoring, smart sump pit sensors, and automated early-warning telemetry.</p>
           </div>
         </div>
       </div>
@@ -475,8 +468,8 @@
     <!-- 11. Inspection CTA -->
     <section class="section">
       <div class="container">
-        <div class="card" style="background: linear-gradient(135deg, #0c2340 0%, #0369a1 100%); color: #ffffff; padding: 3.5rem 2.5rem; text-align: center; border: none; border-radius: var(--radius-xl); box-shadow: var(--shadow-xl);">
-          <span class="badge badge-accent" style="margin-bottom: 1rem;">Have Active Foundation Concerns?</span>
+        <div class="card cta-banner-card" style="background: linear-gradient(135deg, #0c2340 0%, #0369a1 100%); color: #ffffff; padding: 3.5rem 2.5rem; text-align: center; align-items: center; border: none; border-radius: var(--radius-xl); box-shadow: var(--shadow-xl);">
+          <span class="badge badge-accent" style="margin-bottom: 1rem; align-self: center; margin-inline: auto;">Have Active Foundation Concerns?</span>
           <h2 style="font-size: clamp(2rem, 3.5vw, 2.75rem); color: #ffffff; margin-bottom: 1rem;">Schedule an On-Site Diagnostic Today</h2>
           <p style="color: #cbd5e1; max-width: 620px; margin-inline: auto; font-size: 1.1rem; margin-bottom: 2rem;">
             Get factual answers about your foundation cracks, dampness, or settling directly from licensed structural engineers.
